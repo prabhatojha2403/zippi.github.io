@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+body
+{
+    background: #181818;
+}
+.navigation{
+    position: relative;
+    width: 300px;
+    top: 45px;
+    background: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 5vh;
+    left: 600px;
+    border-radius: 10px;
+    /* background: var(--clr); */
+}
+.navigation ul
+{
+    display: flex;
+    width: 350px;
+}
+.navigation ul li
+{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+.navigation ul li a
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 800;
+
+}
+.navigation ul li a .icon
+{
+   position: relative;
+   display: block;
+   line-height: 75px;
+   font-size: 1.5em;
+   text-align: center;
+   transition: 0.5s;
+   color: #181818;
+}
+.navigation ul li.active a .icon
+{
+    transform: translateY(-35px);
+}
+.navigation ul li a .text 
+{
+    position: absolute;
+    color: #181818;
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.navigation ul li.active a .text 
+{
+   opacity: 1;
+   transform: translateY(10px);
+}
+.indicator
+{
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background:#29fd53 ;
+    border-radius: 50%;
+    border: 6px solid #181818;
+    transition: 0.5s;
+}
+.indicator::before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -21.5px;
+    
+    width: 20px;
+    height: 20px;
+    background:transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 1px -10px 0 0 #181818;
+
+}
+.indicator::after
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -21.5px;
+    
+    width: 20px;
+    height: 20px;
+    background:transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 1px -10px 0 0 #181818;
+
+}
+.navigation ul li:nth-child(1).active ~ .indicator
+
+{
+    transform:translateX(calc(70px * 0) );
+}
+.navigation ul li:nth-child(2).active ~ .indicator
+
+{
+    transform:translateX(calc(70px * 1)) ;
+}
+.navigation ul li:nth-child(3).active ~ .indicator
+
+{
+    transform:translateX(calc(70px * 2)) ;
+}
+.navigation ul li:nth-child(4).active ~ .indicator
+
+{
+    transform:translateX(calc(70px * 3)) ;
+}
+section
+{
+    position: relative;
+    min-height: 90vh;
+    background: url(login.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: 0.5s;
+    top: 50px;
+}
+section.active 
+{
+    background: url(signup.png);
+}
+section .container3
+{
+  position: relative;
+  width: 800px;
+  height: 400px;
+  background: #fff;  
+  box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+section .container3 .user 
+{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display:flex;
+}
+section .container3 .user .imgBx2
+{
+    position: relative;
+    
+    width: 50%;
+    height: 100%;
+    transition: 0.5s;
+}
+section .container3 .user .imgBx2 img
+{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+section .container3 .user .formBx
+{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    transition: 0.5s;
+}
+section .container3 .user .formBx h2
+{
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #555;
+}
+section .container3 .user .formBx input
+{
+    width: 100%;
+    padding: 10px;
+    background: #d1cdcd;
+    color: #333;
+    border: none;
+    outline: none;
+    box-shadow:none ;
+    font-size: 14px;
+    margin: 8px 0;
+    letter-spacing: 1px;
+    font-weight: 300;
+
+}
+section .container3 .user .formBx input[type="submit"]
+{
+    max-width: 100px;
+    background: #4f52fd;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+section .container3 .user.signupBx .formBx input[type="submit"]
+{
+    background: #1c12ad;
+}
+section .container3 .user .formBx .signup
+{
+    position: relative;
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+section .container3 .user .formBx .signup a 
+{
+    font-weight: 600;
+    text-decoration: none;
+    color: #f58337;
+}
+section .container3 .signupBx
+{
+  pointer-events: none;
+}
+section .container3.active .signupBx
+{
+    pointer-events: initial;
+}
+section .container3 .signupBx .formBx
+{
+    top: 100%;
+}
+section .container3.active .signupBx .formBx
+{
+    top: 0%;
+}
+section .container3 .signupBx .imgBx2
+{
+    top:-100%;
+    transition: 0.3s;
+}
+section .container3.active .signupBx .imgBx2
+{
+    top:0%;
+}
+section .container3 .signinBx .formBx
+{
+    top: 0;
+
+}
+section .container3.active .signinBx .formBx
+{
+    top: 100%;
+    
+}
+
+section .container3 .signinBx .imgBx2
+{
+    top: 0;
+    transition: 0.5s;
+
+}
+section .container3.active .signinBx .imgBx2
+{
+    top: -100%;
+    
+}
+
+/* responsiveness */
+@media (max-width:991px)
+{
+    section .container3
+    {
+        max-width: 400px;
+    }
+    section .container3 .imgBx2
+    {
+        display: none;
+    }
+    section .container3 .user .formBx
+    {
+        width:100% ;
+    }
+    section .container3.active .signinBx .formBx
+    {
+        top: -100%;
+    }
+}
+footer
+{   position: relative;
+    padding-left: 40px;
+    background: #000000;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top: 2px solid black;
+}
+footer .container5
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+footer .container5 .sec
+{
+    margin-right: 30px;
+}
+footer .container5 .sec.aboutus
+{
+    width:40% ;
+}
+footer .container5  h2
+{
+    position: relative;
+    color: rgb(255, 242, 242);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+footer .container5 h2:before
+{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+footer  p
+{
+   color: #999; 
+}
+.sci4
+{
+    margin-top:20px ;
+    display: flex ;
+}
+.sci4 li
+{
+   list-style: none; 
+}
+.sci4 li a 
+{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: rgb(98, 87, 87);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.sci4 li a:hover
+{
+    background: rgb(255, 255, 255);
+}
+.quickLinks
+{
+    position: relative;
+    width: 25%;
+}
+.quickLinks ul li 
+{
+  list-style: none;  
+}
+.quickLinks ul li a
+{
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.quickLinks ul li a:hover
+{
+    color: #fff;
+}
+.contact
+{
+    width: calc(35% - 60px);
+    margin-right: 0  !important;
+}
+.contact .info3
+{
+    position: relative;
+}
+.contact .info3 li
+{
+   display: flex;
+   margin-bottom: 16px; 
+}
+.contact .info3 li span:nth-child(1) 
+{
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.contact .info3 li span
+{
+    color: #999;
+
+}
+.contact .info3 li a
+{
+    color:#999;
+    text-decoration: none;
+
+}
+.contact .info3 li a:hover 
+{
+    color: #fff;
+}
+.copyrightText
+{
+    width: 100%;
+    background: #f23914;
+    padding: 8px 100px;
+    text-align: center;
+    color: #999;
+}
+@media (max-width:991px)
+{
+    footer 
+    {
+        padding: 40px;
+    }
+    footer .container5
+    {
+        flex-direction: column;
+    }
+    footer .container5 .sec 
+    {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+}
